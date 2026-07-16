@@ -1,0 +1,91 @@
+# =========================================================
+# PYTHON
+# =========================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# =========================================================
+# VIRTUAL ENVIRONMENTS
+# =========================================================
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# =========================================================
+# IDE / EDITORS
+# =========================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# =========================================================
+# OS FILES
+# =========================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# =========================================================
+# PROJECT-SPECIFIC
+# =========================================================
+
+# Local databases (ChromaDB persistence)
+/dbs/
+/chroma_data/
+*.sqlite3
+*.db
+
+# Generated temp files from invoice generation & bulk upload
+*.zip
+*.pdf
+/tmp/
+/temp/
+
+# Logs
+*.log
+logs/
+
+# Local environment overrides
+.env.local
+.env.*.local
+
+# Keep the example file
+!.env.example
