@@ -244,3 +244,9 @@ Absolutely. Change `OLLAMA_MODEL` in your `.env` to any model with vision capaci
 
 **Q: Where is my data stored?**  
 Locally in `./dbs/chroma/`. Nothing leaves your machine.
+
+---
+
+## 🙏 Acknowledgments
+
+Built with **Gradio**, **LangChain**, **ChromaDB**, and **Ollama** — all running 100% locally on your hardware.
