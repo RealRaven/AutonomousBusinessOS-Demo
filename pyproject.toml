@@ -1,0 +1,145 @@
+# =========================================================
+# BUILD SYSTEM
+# =========================================================
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# =========================================================
+# PROJECT METADATA
+# =========================================================
+[project]
+name = "AutonomousBusinessOS-Demo"
+version = "0.1.0"
+description = "AI-Powered Business Management with RAG, Vision Extraction & Cinematic UI"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "RealRaven"}
+]
+keywords = [
+    "llm", "rag", "gradio", "ollama", "chromadb", 
+    "business-management", "vision", "local-ai"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# =========================================================
+# DEPENDENCIES
+# =========================================================
+dependencies = [
+    "gradio>=6.0.0",
+    "chromadb>=0.4.0",
+    "ollama>=0.1.0",
+    "langchain>=0.3.0",
+    "langchain-core>=0.3.0",
+    "langchain-ollama>=0.2.0",
+    "langchain-community>=0.3.0",
+    "pydantic>=2.0.0",
+    "Pillow>=10.0.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "pdf2image>=1.16.0",
+    "PyPDF2>=3.0.0",
+    "weasyprint>=60.0",
+    "sentence-transformers>=2.2.0",
+    "rich>=13.0.0",
+]
+
+# =========================================================
+# OPTIONAL DEPENDENCY GROUPS
+# =========================================================
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.5.0",
+]
+
+# =========================================================
+# ENTRY POINTS
+# =========================================================
+[project.scripts]
+business-os = "run:main"
+
+# =========================================================
+# TOOL: SETUPTOOLS
+# =========================================================
+[tool.setuptools]
+packages = [
+    "config",
+    "core",
+    "application",
+    "infrastructure",
+    "infrastructure.database",
+    "infrastructure.llm",
+    "presentation",
+    "presentation.tabs",
+]
+
+[tool.setuptools.package-data]
+"presentation" = ["styles.css", "assets/img/*"]
+
+# =========================================================
+# TOOL: RUFF (Linter & Formatter)
+# =========================================================
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+src = ["."]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # Pyflakes
+    "I",   # isort
+    "N",   # pep8-naming
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "SIM", # flake8-simplify
+]
+ignore = ["E501"]  # Line too long (handled by formatter)
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+# =========================================================
+# TOOL: BLACK (Formatter - alternative to ruff format)
+# =========================================================
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311", "py312"]
+
+# =========================================================
+# TOOL: MYPY (Type Checker)
+# =========================================================
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false  # Set to true once you add type hints everywhere
+ignore_missing_imports = true
+
+# =========================================================
+# TOOL: PYTEST
+# =========================================================
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"

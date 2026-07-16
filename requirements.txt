@@ -1,0 +1,16 @@
+# requirements.txt
+gradio>=6.0.0
+chromadb>=0.4.0
+ollama>=0.1.0
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-ollama>=0.2.0
+langchain-community>=0.3.0
+pydantic>=2.0.0
+Pillow>=10.0.0
+numpy>=2.4.4
+pandas>=3.0.2
+pdf2image>=1.17.0
+PyPDF2>=3.0.1
+weasyprint>=68.1
+sentence-transformers>=5.4.0
